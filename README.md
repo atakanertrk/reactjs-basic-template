@@ -5,6 +5,8 @@
 
 ![photo](https://robohash.org/3?200x200)
 
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
+
 ### Faydalı linkler
 * https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
 * https://www.w3schools.com/REACT/default.asp
@@ -25,3 +27,5 @@
 ***
 ### diffrence css-scss-sass
 * https://stackoverflow.com/questions/46400443/what-is-the-difference-between-css-and-scss
+
+
