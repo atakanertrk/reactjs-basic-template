@@ -1,3 +1,4 @@
+
 ## Reactjs başlangıç çalışmasıdır. 
 * props
 * state
@@ -5,7 +6,16 @@
 
 ![photo](https://robohash.org/3?200x200)
 
+```
+npm install
+```
+```
+npm start
+```
+
 ![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
+
+
 
 ### Faydalı linkler
 * https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
