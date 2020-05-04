@@ -24,6 +24,7 @@ npm start
 * https://reactjs.net/tutorials/aspnetcore.html (react for .net)
 * https://reactjs.org/docs/react-component.html (components lifecycle)
 * https://tr.reactjs.org/docs/conditional-rendering.html (conditional rendering)
+* https://www.freecodecamp.org/news/quick-guide-to-understanding-and-creating-reactjs-apps-8457ee8f7123/ (genereal for react)
 ***
 #### redux
 * http://devnot.com/2018/redux-nedir/
