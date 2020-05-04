@@ -4,7 +4,7 @@ const UserName = ({nameChange}) => {
 	return(
 		<div>
 		 <label>User Name</label>
-		<input type="text" onChange={nameChange}/>
+		<input type="text" reset onChange={nameChange}/>
 		</div>
 	);
 };

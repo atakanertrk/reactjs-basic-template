@@ -4,7 +4,7 @@ const UserPassword = ({passwordChange}) => {
 	return(
 		<div>
 		 <label>User Password</label>
-		<input type="text" onChange={passwordChange}/>
+		<input type="password" onChange={passwordChange}/>
 		</div>
 	);
 };

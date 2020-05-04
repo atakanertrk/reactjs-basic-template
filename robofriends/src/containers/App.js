@@ -5,7 +5,7 @@ import './App.css'
 import Scroll from '../components/Scroll'
 import UserName from '../components/UserName'
 import UserPassword from '../components/UserPassword'
-import Test from './Test'
+import UserValid from './UserValid'
 
 class App extends Component {
 	constructor(props) {
@@ -41,7 +41,10 @@ class App extends Component {
 	onPasswordChange = (event) => {
 		this.setState({password:event.target.value});
 	}
-	onClickGetNotes = () => {
+	onClickShowNotes = () =>{
+		alert("^^");
+	}
+	onClickLogin = () => {
 	/*	var name = this.state.username;
 		var password = this.state.password;
 		alert(`your name: ${name} , you password:${password} `);  */
@@ -55,12 +58,18 @@ class App extends Component {
 				if(this.state.users[i].userName===this.state.username && this.state.users[i].userPassword===this.state.password){
 					this.setState({username:this.state.users[i].userName,password:this.state.users[i].password});
 					this.state.userValid=true;
-					alert(`your name: ${this.state.username} your password: ${this.state.password}`);
 				}
 			}
 		}
+		if(this.state.userValid===false){
+			alert("wrong username or password. If you log-out and trying login again. Clear inputs and re-write");
+		}
 	}
-	
+	onClickLogOut = () =>{
+		this.setState({userValid:false,username:'',password:''});
+		alert(`loged out sucess`);
+	}
+
 	componentDidMount(){
 		//console.log("component did mount");
 		fetch('https://jsonplaceholder.typicode.com/users').then(response=>{
@@ -80,6 +89,7 @@ class App extends Component {
 
 
 	render(){
+		console.log("render started");
 		const filiteredRobots = this.state.robots.filter(robot =>{
 		 return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
 		})
@@ -88,17 +98,14 @@ class App extends Component {
 		}
 		else{
 			if(this.state.userValid===true){
-				console.log("here");
-				console.log(this.state.username);
+				console.log("user valid")
 				return (
 				<div className='tc'>
 					<h1>Robo Friends</h1>
-					<Test uname={this.state.username}/>
+					<UserValid uname={this.state.username}/>
 					<div>
-						<UserName nameChange={this.onUsernameChange}/>
-						<UserPassword passwordChange={this.onPasswordChange}/>
-						<button onClick={this.onClickGetNotes}>See Notes</button>
-						
+						<button onClick={this.onClickLogOut}>LogOut</button>
+						<button onClick={this.onClickShowNotes}>ShowMyNotes</button>
 					</div>
 					<SearchBox searchChange={this.onSearchChange}/>
 					<Scroll>
@@ -115,8 +122,7 @@ class App extends Component {
 					<div>
 						<UserName nameChange={this.onUsernameChange}/>
 						<UserPassword passwordChange={this.onPasswordChange}/>
-						<button onClick={this.onClickGetNotes}>See Notes</button>
-						
+						<button onClick={this.onClickLogin}>Login</button>
 					</div>
 					<SearchBox searchChange={this.onSearchChange}/>
 					<Scroll>
