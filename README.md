@@ -1,4 +1,4 @@
-
+refrences : https://github.com/zero-to-mastery
 ## Reactjs başlangıç çalışmasıdır. 
 * props
 * state
