@@ -37,7 +37,7 @@ npm start
 * https://semver.npmjs.com/  (versions of npm packages)
 ***
 ### style
-* react-bootstrap
+* react-bootstrap https://react-bootstrap.github.io/components/cards/
 ### diffrence css-scss-sass
 * https://stackoverflow.com/questions/46400443/what-is-the-difference-between-css-and-scss
 ### React Router
