@@ -1,4 +1,6 @@
-refrences : https://github.com/zero-to-mastery
+#### refrences & tutorials
+* https://github.com/zero-to-mastery
+* [Dev Ed youtube](https://www.youtube.com/watch?v=Law7wfdg_ls)
 ## Reactjs başlangıç çalışmasıdır. 
 * props
 * state
