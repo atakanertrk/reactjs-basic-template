@@ -10,6 +10,7 @@
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
 
+# https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
 
 ```
 npm install
@@ -20,6 +21,7 @@ npm start
 
 ![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
 
+# https://www.youtube.com/watch?v=9x_iGRKUAbU
 ## http://demo5944413.mockable.io/
 
 ### Faydalı linkler
