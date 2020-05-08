@@ -1,27 +1,20 @@
-#### refrences & tutorials
-* https://github.com/zero-to-mastery
-* [Dev Ed youtube](https://www.youtube.com/watch?v=Law7wfdg_ls)
+
 ## Reactjs başlangıç çalışmasıdır. 
-* props
-* state
-* children
 
 ![photo](https://robohash.org/3?200x200)
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
 
-# https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
+## react-routing
 
-```
-npm install
-```
-```
-npm start
-```
+# https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
 
 ![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
 
+## robofriends
+
 # https://www.youtube.com/watch?v=9x_iGRKUAbU
+
 ## http://demo5944413.mockable.io/
 
 ### Faydalı linkler
@@ -52,3 +45,8 @@ npm start
 * https://www.youtube.com/watch?v=Law7wfdg_ls
 
 ### ajax
+
+
+#### refrences & tutorials
+* https://github.com/zero-to-mastery
+* [Dev Ed youtube](https://www.youtube.com/watch?v=Law7wfdg_ls)
