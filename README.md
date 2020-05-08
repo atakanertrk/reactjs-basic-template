@@ -1,11 +1,9 @@
 
 ## Reactjs başlangıç çalışmasıdır. 
 
-
+## react-routing
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
-
-## react-routing
 
 # https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
 
