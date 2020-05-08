@@ -1,7 +1,7 @@
 
 ## Reactjs başlangıç çalışmasıdır. 
 
-![photo](https://robohash.org/3?200x200)
+
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
 
@@ -46,6 +46,7 @@
 
 ### ajax
 
+![photo](https://robohash.org/3?200x200)
 
 #### refrences & tutorials
 * https://github.com/zero-to-mastery
