@@ -15,7 +15,6 @@
 
 # https://www.youtube.com/watch?v=9x_iGRKUAbU
 
-## http://demo5944413.mockable.io/
 
 ### Faydalı linkler
 * https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
