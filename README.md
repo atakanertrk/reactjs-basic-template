@@ -7,12 +7,11 @@
 
 # https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
 
-![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
-
 ## robofriends
 
-# https://www.youtube.com/watch?v=9x_iGRKUAbU
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
 
+# https://www.youtube.com/watch?v=9x_iGRKUAbU
 
 ### Faydalı linkler
 * https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
