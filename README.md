@@ -1,17 +1,23 @@
 
 ## Reactjs başlangıç çalışmasıdır. 
 
-## react-routing
+# react-routing
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
 
 # https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
 
-## robofriends
+# robofriends
 
 ![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
 
 # https://www.youtube.com/watch?v=9x_iGRKUAbU
+
+# react-api [i have used asp.net core web api for this example](https://github.com/atakanertrk/csharp-and-dotnet-general/tree/master/simple-web-api-allowedallorigins/ApiForReact)
+
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/reactapi.png)
+
+# https://www.youtube.com/watch?v=ZCZOAXgEzjU&feature=youtu.be
 
 ### Faydalı linkler
 * https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
