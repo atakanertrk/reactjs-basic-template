@@ -1,3 +1,9 @@
+# react-api [i have used asp.net core web api for this example](https://github.com/atakanertrk/csharp-and-dotnet-general/tree/master/simple-web-api-allowedallorigins/ApiForReact)
+
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/reactapi.png)
+
+# https://www.youtube.com/watch?v=ZCZOAXgEzjU&feature=youtu.be
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
