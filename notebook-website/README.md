@@ -1,3 +1,7 @@
+## https://www.youtube.com/watch?v=qIwPlmc2DIk&feature=youtu.be
+
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/photo.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
