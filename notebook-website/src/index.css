@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  heigh:100%;
+  /* background: rgb(18,120,38);
+  background: linear-gradient(90deg, rgba(18,120,38,0.8354692218684349) 0%, rgba(0,255,209,0.8354692218684349) 50%, rgba(18,120,38,0.8242647400757178) 100%);    */
+  background: rgb(35,144,44);
+  background: linear-gradient(90deg, rgba(35,144,44,1) 0%, rgba(43,149,163,1) 50%, rgba(35,144,44,1) 100%);
+}
