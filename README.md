@@ -5,7 +5,10 @@
 
 ![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
 
-# https://www.youtube.com/watch?v=8ppMyBDBWdI&feature=youtu.be
+# Notebook -> https://lets.createnote.me/
+## https://www.youtube.com/watch?v=qIwPlmc2DIk&feature=youtu.be
+
+![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/photo.png)
 
 # robofriends
 
