@@ -1,4 +1,3 @@
-# react-api [i have used asp.net core web api for this example](https://github.com/atakanertrk/csharp-and-dotnet-general/tree/master/simple-web-api-allowedallorigins/ApiForReact)
 
 ![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/reactapi.png)
 
