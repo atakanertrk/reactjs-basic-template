@@ -7,12 +7,13 @@
 * Database: SQLite, SHA256 Hashed String generated for user authentication in server side SHA256(username+password) = authentication code
 * Hashed authentication code stored in Client Cookie and used in Http requests
 
-![loginpage](https://github.com/atakanertrk/reactjs-basic-template/images/loginPage.png)
-
-![authentication](https://github.com/atakanertrk/reactjs-basic-template/images/authentication.png)
-
-![notesPage](https://github.com/atakanertrk/reactjs-basic-template/images/notesPage.png)
-
-![webapi](https://github.com/atakanertrk/reactjs-basic-template/images/webapi.png)
-
-![database](https://github.com/atakanertrk/reactjs-basic-template/images/database.png)
+## Login Page
+![loginpage](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/loginPage.png)
+## Cookie / Authentication
+![authentication](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/authentication.png)
+## Notes Page
+![notesPage](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/notesPage.png)
+## Web API
+![webapi](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/webapi.png)
+## Database
+![database](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/database.png)
