@@ -1,11 +1,14 @@
 
 
+
 # Notebook Website
 
 * Client Side: ReactJS, Axios
 * Server Side: Asp.net Core Web Api, Dapper 
 * Database: SQLite, SHA256 Hashed String generated for user authentication in server side SHA256(username+password) = authentication code
 * Hashed authentication code stored in Client Cookie and used in Http requests
+
+### https://www.youtube.com/watch?v=9sB8oT6AKow&feature=youtu.be&ab_channel=AtakanErt%C3%BCrk
 
 ## Login Page
 ![loginpage](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/loginPage.png)
