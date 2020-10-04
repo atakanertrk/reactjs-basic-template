@@ -1,0 +1,76 @@
+.header{
+    color:black;
+}
+.notesContainer{
+    text-align:center;
+    margin-top:5%;
+}
+.logOutButton{
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.1);
+    border: 2px solid black;
+}
+.logOutButton:hover{
+    font-size: 35px;
+}
+.logOutForm{
+    margin-bottom:30px;
+}
+.textArea{
+    color:wheat;
+    background-color: rgba(0,0,0,0.3);
+}
+.buttonAdd{
+    font-size:25px;
+    background-color: rgba(0,0,0,0.1);
+    border:0;
+    color:black;
+    margin-right: 15px;
+}
+.buttonAdd:hover{
+    font-size: 30px;
+}
+.buttonDelete{
+    font-size:20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border:0;
+    color:whitesmoke;
+}
+.buttonDelete:hover{
+    font-size: 25px;
+}
+.note{
+    font-size: 30px;
+    font-family: monospace;
+}
+
+
+/* scroll */
+.scrollStyle{
+	overflow-y:scroll;
+	border:3px solid black;
+	height:50vh;
+	width:100vw;
+	margin-left:0vw;
+	background: rgb(34,193,195);
+	background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /*background: #f1f1f1;*/
+  background:rgba(0,0,0,0);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

@@ -1,58 +1,18 @@
 
-## Reactjs başlangıç çalışmasıdır. 
 
-# react-routing
+# Notebook Website
 
-![router](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z2.png)
+* Client Side: ReactJS, Axios
+* Server Side: Asp.net Core Web Api, Dapper 
+* Database: SQLite, SHA256 Hashed String generated for user authentication in server side SHA256(username+password) = authentication code
+* Hashed authentication code stored in Client Cookie and used in Http requests
 
-# Notebook -> https://lets.createnote.me/
-## https://www.youtube.com/watch?v=qIwPlmc2DIk&feature=youtu.be
+![loginpage](https://github.com/atakanertrk/reactjs-basic-template/images/loginPage.png)
 
-![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/photo.png)
+![authentication](https://github.com/atakanertrk/reactjs-basic-template/images/authentication.png)
 
-# robofriends
+![notesPage](https://github.com/atakanertrk/reactjs-basic-template/images/notesPage.png)
 
-![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/Ads%C4%B1z.png)
+![webapi](https://github.com/atakanertrk/reactjs-basic-template/images/webapi.png)
 
-# https://www.youtube.com/watch?v=9x_iGRKUAbU
-
-# react-api [i have used asp.net core web api for this example](https://github.com/atakanertrk/csharp-and-dotnet-general/tree/master/simple-web-api-allowedallorigins/ApiForReact)
-
-![photo](https://github.com/atakanertrk/reactjs-basic-template/blob/master/reactapi.png)
-
-# https://www.youtube.com/watch?v=ZCZOAXgEzjU&feature=youtu.be
-
-### Faydalı linkler
-* https://developers.google.com/web/fundamentals/primers/service-workers/ (service workers, react anlamak için önemli)
-* https://www.w3schools.com/REACT/default.asp
-* https://reactjs.org/docs/add-react-to-a-website.html (include react only for spesific part of another website)
-* https://reactjs.net/tutorials/aspnetcore.html (react for .net)
-* https://reactjs.org/docs/react-component.html (components lifecycle)
-* https://tr.reactjs.org/docs/conditional-rendering.html (conditional rendering)
-* https://www.freecodecamp.org/news/quick-guide-to-understanding-and-creating-reactjs-apps-8457ee8f7123/ (genereal for react)
-***
-#### redux
-* http://devnot.com/2018/redux-nedir/
-***
-### react api (axios react for http requests)
-* https://www.youtube.com/watch?v=oQnojIyTXb8
-***
-### npm
-* https://tachyons.io/ (css)
-* https://semver.npmjs.com/  (versions of npm packages)
-***
-### style
-* react-bootstrap https://react-bootstrap.github.io/components/cards/
-### diffrence css-scss-sass
-* https://stackoverflow.com/questions/46400443/what-is-the-difference-between-css-and-scss
-### React Router
-* react-router-dom
-* https://www.youtube.com/watch?v=Law7wfdg_ls
-
-### ajax
-
-![photo](https://robohash.org/3?200x200)
-
-#### refrences & tutorials
-* https://github.com/zero-to-mastery
-* [Dev Ed youtube](https://www.youtube.com/watch?v=Law7wfdg_ls)
+![database](https://github.com/atakanertrk/reactjs-basic-template/images/database.png)
