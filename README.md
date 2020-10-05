@@ -8,6 +8,9 @@
 * Database: SQLite, SHA256 Hashed String generated for user authentication in server side SHA256(username+password) = authentication code
 * Hashed authentication code stored in Client Cookie and used in Http requests
 
+* calling a POST request repeatedly have side effects of creating the same resource multiple times. So we have used PUT for Adding Note
+> HttpPost(Login,GetNotes) - HttpPut(AddNote,CreateAccount) - HttpDelete(DeleteNote)
+
 ### https://www.youtube.com/watch?v=9sB8oT6AKow&feature=youtu.be&ab_channel=AtakanErt%C3%BCrk
 
 ## Login Page

@@ -23,10 +23,10 @@ namespace NotebookAPI.Controllers
 
         public string All()
         {
-            return @" POST ( api/user/createaccount - api/user/login - api/user/notes ..... list goes on..)";
+            return @" SERVER IS RUNNING ---- POST (api/user/createaccount - api/user/login - api/user/notes .......)";
         }
 
-        [HttpPost]
+        [HttpPut]
         public IActionResult CreateAccount([FromBody] LoginDataModel data)
         {
             var result = _dataAccess.InsertUser(data.UserName,data.UserPassword);
@@ -47,7 +47,7 @@ namespace NotebookAPI.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpDelete]
         public IActionResult DeleteNote([FromBody] DeleteNoteModel data)
         {
             var result = _dataAccess.DeleteUserNote(data.authCode,data.NoteId);
@@ -61,7 +61,10 @@ namespace NotebookAPI.Controllers
                 return StatusCode(400);
             }
         }
-        [HttpPost]
+        // PUT is used to send data to a server to create/update a resource. The difference between POST and PUT is 
+        // that PUT requests are idempotent. ... In contrast, calling a POST request repeatedly have side effects 
+        // of creating the same resource multiple times.
+        [HttpPut]
         public IActionResult AddNote([FromBody] AddNoteModel data)
         {
             var result = _dataAccess.AddNote(data.authCode, data.Note);

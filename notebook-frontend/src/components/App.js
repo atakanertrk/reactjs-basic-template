@@ -11,10 +11,10 @@ class App extends Component {
 		this.state = {
 			UserName: '',
 			UserPassword: '',
-			IsLoggedIn:false,
-			UserNotes:[],
-			Note:'',
-			Status:''
+			IsLoggedIn: false,
+			UserNotes: [],
+			Note: '',
+			Status: ''
 		}
 		this.handleUserName = this.handleUserName.bind(this);
 		this.handleUserPassword = this.handleUserPassword.bind(this);
@@ -25,98 +25,106 @@ class App extends Component {
 	}
 
 	handleUserName = (event) => {
-		this.setState({ UserName: event.target.value, Status:'' });
+		this.setState({ UserName: event.target.value, Status: '' });
 	}
 	handleUserPassword = (event) => {
-		this.setState({ UserPassword: event.target.value, Status:'' });
+		this.setState({ UserPassword: event.target.value, Status: '' });
 	}
 	handleLogin = async (event) => {
 		event.preventDefault();
 		var LoginObject = {
-			UserName:this.state.UserName,
-			UserPassword:this.state.UserPassword
+			UserName: this.state.UserName,
+			UserPassword: this.state.UserPassword
 		}
 		await axios.post(`https://localhost:44360/api/user/login`, LoginObject)
 			.then(res => {
 				bake_cookie('CookieAuth', res.data.authCode);
-				this.setState({IsLoggedIn:true});
-			}).catch(err=>{
-				if(err.response===undefined){
-					this.setState({Status:"Cannot connect to server, try it later"});
+				this.setState({ IsLoggedIn: true });
+			}).catch(err => {
+				if (err.response === undefined) {
+					this.setState({ Status: "Cannot connect to server, try it later" });
 				}
-				else{
-					this.setState({Status:"Login failed, username or password is wrong"});
+				else {
+					this.setState({ Status: "Login failed, username or password is wrong" });
 				}
 			});
 	}
-	handleLogOut=(event)=>{
+	handleLogOut = (event) => {
 		event.preventDefault();
 		delete_cookie('CookieAuth');
-		this.setState({IsLoggedIn:false});
+		this.setState({ IsLoggedIn: false });
 		document.location.reload();
 	}
-	handleCreateAccount= async (event)=>{
+	handleCreateAccount = async (event) => {
 		event.preventDefault();
 		var LoginObject = {
-			UserName:this.state.UserName,
-			UserPassword:this.state.UserPassword
+			UserName: this.state.UserName,
+			UserPassword: this.state.UserPassword
 		}
-		await axios.post(`https://localhost:44360/api/user/createaccount`, LoginObject)
-			.then(res => {
-				bake_cookie('CookieAuth', res.data.authCode);
-				this.setState({IsLoggedIn:true});
-			}).catch(err=>{
-				if(err.response===undefined){
-					this.setState({Status:"Cannot connect to server, try it later"});
-				}
-				else{
-					this.setState({Status:"Username/Password is not valid or already in use"});
-				}
-			});
+			try{
+				let response = await fetch('https://localhost:44360/api/user/createaccount', {
+					method: 'PUT',
+					headers: {
+					  'Accept': 'application/json, text/plain',
+					  'Content-Type': 'application/json;charset=UTF-8'
+					},
+					body: JSON.stringify(LoginObject)
+				  });
+				  response = await response.json();
+				  bake_cookie('CookieAuth', response.authCode);
+				  this.setState({ IsLoggedIn: true }); 
+			}
+			catch(err){
+				this.setState({Status:"create account failed"});
+			}
 	}
 
-	getUserNotes = async () =>{
+	getUserNotes = async () => {
 		var AuthObject = {
-            authCode: read_cookie('CookieAuth')
+			authCode: read_cookie('CookieAuth')
 		}
-       axios.post(`https://localhost:44360/api/user/notes`, AuthObject)
-            .then(res => {
-                this.setState({ UserNotes: res.data });
-            }).catch(err => {
-                console.log("App.js - cannot get notes   ---- " + err);
-			});
+			 const response = await fetch('https://localhost:44360/api/user/notes', {
+				method: 'POST',
+				headers: {
+				  'Accept': 'application/json, text/plain',
+                  'Content-Type': 'application/json;charset=UTF-8'
+				},
+				body: JSON.stringify(AuthObject)
+			  });
+			  const notes = await response.json();
+		console.log(notes);
+		this.setState({UserNotes:notes});
 	}
-
 
 	render() {
 		let cookie = read_cookie('CookieAuth');
-		if(this.state.IsLoggedIn === true || cookie.length !== 0){
-			return(
+		if (this.state.IsLoggedIn === true || cookie.length !== 0) {
+			return (
 				<UserNotes getUserNotes={this.getUserNotes} handleLogOut={this.handleLogOut} userNotes={this.state.UserNotes} />
 			);
 		}
-		else if(this.state.IsLoggedIn===false){
+		else if (this.state.IsLoggedIn === false) {
 			return (
-				<div style={{textAlign:"center", paddingTop:"10%"}}>
-					<h3 style={{color:"darkred"}}>{this.state.Status}</h3>
+				<div style={{ textAlign: "center", paddingTop: "10%" }}>
+					<h3 style={{ color: "darkred" }}>{this.state.Status}</h3>
 					<form onSubmit={this.handleLogin}>
 						<label className="customLabel">
-							UserName:<br/>
-						  <input type="text" value={this.state.UserName} onChange={this.handleUserName} className="customInput" />
+							UserName:<br />
+							<input type="text" value={this.state.UserName} onChange={this.handleUserName} className="customInput" />
 						</label>
-						<br/>
+						<br />
 						<label className="customLabel">
-							UserPassword:<br/>
-						  <input type="text" value={this.state.UserPassword} onChange={this.handleUserPassword} className="customInput"/>
+							UserPassword:<br />
+							<input type="text" value={this.state.UserPassword} onChange={this.handleUserPassword} className="customInput" />
 						</label>
-						<br/>
+						<br />
 						<input type="submit" value="Login" className="customButton" />
 					</form>
 					<form onSubmit={this.handleCreateAccount}>
-						<input type="submit" value="CreateAccountWithFollowingInformation" className="customButton"/>
+						<input type="submit" value="CreateAccountWithFollowingInformation" className="customButton" />
 					</form>
 				</div>
-	
+
 			);
 		}
 	}
