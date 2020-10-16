@@ -1,6 +1,8 @@
-# Asp.net core web api signalR implementation - Client: ReactJS - realtime chat demo
-* https://www.youtube.com/watch?v=AOPq7ewHOqs&feature=youtu.be&ab_channel=AtakanErt%C3%BCrk
+## Asp.net core web api signalR implementation - Client: ReactJS - realtime chat demo
+### https://www.youtube.com/watch?v=AOPq7ewHOqs&feature=youtu.be&ab_channel=AtakanErt%C3%BCrk
 ![signalr](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/signalr.png)
+
+<hr/>
 
 # Notebook Website
 
