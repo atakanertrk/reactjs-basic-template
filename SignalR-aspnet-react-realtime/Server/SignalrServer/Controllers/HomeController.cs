@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RoundTheCode.ReactSignalR.Controllers
+namespace SignalrServerWebAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

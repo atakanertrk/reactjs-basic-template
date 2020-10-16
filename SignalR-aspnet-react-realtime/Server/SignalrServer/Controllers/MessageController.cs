@@ -5,9 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using RoundTheCode.ReactSignalR.Hubs;
+using SignalrServerWebAPI.Hubs;
+using SignalrServerWebAPI.Models;
 
-namespace RoundTheCode.ReactSignalR.Controllers
+namespace SignalrServerWebAPI.Controllers
 {
     [ApiController]
     public class MessageController : Controller
@@ -28,13 +29,6 @@ namespace RoundTheCode.ReactSignalR.Controllers
             return Ok();
         }
 
-
-        public class RequestMessage
-        {
-            public string Message { get; set; }
-            public string senderUserId { get; set; }
-            public string reciverUserId { get; set; }
-        }
 
     }
 }
