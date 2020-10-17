@@ -1,4 +1,6 @@
 ## Asp.net core web api signalR implementation - Client: ReactJS - realtime chat demo
+* client : https://reactrealtime.azurewebsites.net/
+* server/api which handles connections : https://serverreactapi.azurewebsites.net/api/home/welcome
 ### https://www.youtube.com/watch?v=AOPq7ewHOqs&feature=youtu.be&ab_channel=AtakanErt%C3%BCrk
 ![signalr](https://github.com/atakanertrk/reactjs-basic-template/blob/master/images/signalr.png)
 
