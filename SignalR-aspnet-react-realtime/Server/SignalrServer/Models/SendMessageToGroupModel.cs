@@ -9,5 +9,6 @@ namespace SignalrServerWebAPI.Models
     {
         public string Message { get; set; }
         public string GroupName { get; set; }
+        public string UserName { get; set; }
     }
 }

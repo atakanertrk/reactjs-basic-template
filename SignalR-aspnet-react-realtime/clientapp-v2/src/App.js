@@ -16,13 +16,14 @@ class App extends React.Component {
       connection: null,
       groupNameCreate: "",
       messageToGroup: "",
-      joinedGroups:[]
+      joinedGroups: [],
+      userName: ""
     };
   }
 
   componentDidMount = async () => {
     const hubConnection = await new signalR.HubConnectionBuilder()
-      .withUrl("https://localhost:44339/message")
+      .withUrl("https://serverreactapi.azurewebsites.net/message")
       .build();
     try {
       await hubConnection.start();
@@ -60,9 +61,8 @@ class App extends React.Component {
       li.innerText = groupMessages;
       ul.appendChild(li);
     })
-
   }
-  
+
   handleChangeToWho = (event) => {
     this.state.reciverUserId = event.target.value;
   }
@@ -76,7 +76,8 @@ class App extends React.Component {
       senderUserId: this.state.senderUserId,
       reciverUserId: this.state.reciverUserId
     }
-    var response = await fetch('https://localhost:44339/api/message/senddm', {
+    // 
+    var response = await fetch('https://serverreactapi.azurewebsites.net/api/message/senddm', {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain',
@@ -109,6 +110,12 @@ class App extends React.Component {
     event.preventDefault();
     try {
       await this.state.connection.invoke("CreateGroup", this.state.groupNameCreate);
+      await this.state.connection.invoke("JoinToGroup", this.state.groupNameCreate);
+      this.state.groupName = this.state.groupNameCreate;
+      var ol = document.getElementById("joinedGroups");
+      var li = document.createElement("li");
+      li.innerText = this.state.groupNameCreate;
+      ol.appendChild(li);
     } catch (err) {
       console.error(err);
     }
@@ -120,10 +127,13 @@ class App extends React.Component {
     event.preventDefault();
     var SendMessageToGroupModel = {
       Message: this.state.messageToGroup,
-      GroupName: this.state.groupName
+      GroupName: this.state.groupName,
+      UserName : this.state.userName
     }
     try {
-      await this.state.connection.invoke("SendMessageToGroup", SendMessageToGroupModel);
+      if(this.state.GroupName !== ""){
+        await this.state.connection.invoke("SendMessageToGroup", SendMessageToGroupModel);
+      }
     } catch (err) {
       console.error(err);
     }
@@ -136,68 +146,94 @@ class App extends React.Component {
     try {
       await this.state.connection.invoke("DisconnectFromAllGroups");
       var ol = document.getElementById("joinedGroups");
-      ol.innerHTML="";
+      ol.innerHTML = "";
+      this.state.GroupName = "";
     } catch (err) {
       console.error(err);
     }
   }
+  handleUserNameSubmit = async (event) => {
+    event.preventDefault();
+    alert("user name is : " + this.state.userName);
+    this.setState({ userName: this.state.userName });
+    setTimeout(() => {  this.state.connection.invoke("GetAllGroups"); }, 2000);
+  }
+  handleUserNameChange = async (event) => {
+    this.state.userName = event.target.value;
+  }
 
   render() {
-    return (
-      <div>
+    if (this.state.userName !== "") {
+      return (
         <div>
-          <h3>Join or create group chat</h3>
-          <form onSubmit={this.handleLoginGroupSubmit}>
-            GroupName:
-                <input onChange={this.handleGroupNameChange}></input>
-            <button type="submit">join</button>
-          </form>
-          <form onSubmit={this.handleCreateGroupSubmit}>
-            GroupName:
-                <input onChange={this.handleCreateGroupNameChange}></input>
-            <button type="submit">Create</button>
-          </form>
-          <h5>All Public Groups</h5>
-          <ol id="groups" style={{ textAlign: "left" }}>
-          </ol>
-          <h5>All Joined Groups</h5>
-          <ol id="joinedGroups" style={{ textAlign: "left" }}>
-          </ol>
-          <form onSubmit={this.handleDisconnectFromGroups}>
-            <button type="submit">Disconnect From All Groups</button>
-          </form>
-        </div>
-        <div>
-          <form onSubmit={this.handleMessageJoinedGroupSubmit}>
-            SendMessageToAllJoinedGroups:
-                <input onChange={this.handleMessageJoinedGroupChange}></input>
-            <button type="submit">Send to all joined groups</button>
-          </form>
-        </div>
-        <div>
-          <h5>All Recived Messages From Joined Groups</h5>
-          <ol id="groupMessages" style={{ textAlign: "left" }}>
-            <li>..</li>
-          </ol>
-        </div>
-        <div className="App" style={{ border: "4px solid red", margin: "50px" }}>
-          <ul id="messages" style={{ textAlign: "center", listStyle: "none" }}>
-            <h5>Sended and Recived Direct Messages via Id</h5>
-            <h4>your id is = {this.state.senderUserId}</h4>
-          </ul>
-          <hr />
+          <h3>{this.state.userName}</h3>
+          <div style={{border:"4px solid green", boxSizing:"border-box"}}>
           <div>
-            <form onSubmit={this.handleSubmitSend}>
-              reciver id:
-                <input onChange={this.handleChangeToWho}></input>
-                 message:
-                <input onChange={this.handleChangeMessage}></input>
-              <button type="submit">send</button>
+            <h3>Join or create group chat</h3>
+            <form onSubmit={this.handleLoginGroupSubmit}>
+              Group Name:
+                  <input onChange={this.handleGroupNameChange}></input>
+              <button type="submit">join</button>
+            </form>
+            <form onSubmit={this.handleCreateGroupSubmit}>
+              Group Name:
+                  <input onChange={this.handleCreateGroupNameChange}></input>
+              <button type="submit">Create</button>
+            </form>
+            <h5>All Public Groups</h5>
+            <ol id="groups" style={{ textAlign: "left" }}>
+            </ol>
+            <h5>All Joined Groups</h5>
+            <ol id="joinedGroups" style={{ textAlign: "left" }}>
+            </ol>
+            <form onSubmit={this.handleDisconnectFromGroups}>
+              <button type="submit">Disconnect From All Groups</button>
             </form>
           </div>
+          <div>
+            <form onSubmit={this.handleMessageJoinedGroupSubmit}>
+              SendMessageToAllJoinedGroups:
+                  <input onChange={this.handleMessageJoinedGroupChange}></input>
+              <button type="submit">Send to all joined groups</button>
+            </form>
+          </div>
+          <div>
+            <h5>All Recived Messages From Joined Groups</h5>
+            <ol id="groupMessages" style={{ textAlign: "left" }}>
+              <li>..</li>
+            </ol>
+          </div>
+          </div>
+          
+          <div className="App" style={{ border: "4px solid red", margin: "50px" }}>
+            <ul id="messages" style={{ textAlign: "center", listStyle: "none" }}>
+              <h5>Send and Recive Direct Messages via Id</h5>
+              <h4>your id is = {this.state.senderUserId}</h4>
+            </ul>
+            <hr />
+            <div>
+              <form onSubmit={this.handleSubmitSend}>
+                reciver id:
+                  <input onChange={this.handleChangeToWho}></input>
+                   message:
+                  <input onChange={this.handleChangeMessage}></input>
+                <button type="submit">send</button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else {
+      return (
+        <form onSubmit={this.handleUserNameSubmit}>
+          Submit Your User Name For The Session:
+          <input onChange={this.handleUserNameChange}></input>
+          <button type="submit">Submit user name</button>
+        </form>
+      );
+    }
+
   }
 }
 

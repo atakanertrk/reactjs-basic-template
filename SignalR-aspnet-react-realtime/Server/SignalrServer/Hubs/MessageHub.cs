@@ -20,29 +20,40 @@ namespace SignalrServerWebAPI.Hubs
         public override async Task OnConnectedAsync()
         {
             await Groups.AddToGroupAsync(Context.ConnectionId, "allusers");
-            await Clients.Caller.SendAsync("GetAllGroups",groups);
             await base.OnConnectedAsync();
         }
         public override async Task OnDisconnectedAsync(Exception exception)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, "allusers");
+            await DisconnectFromAllGroups();
             await base.OnDisconnectedAsync(exception);
         }
 
         public Task CreateGroup(string groupName)
         {
-            groups.Add(groupName);
-            return Clients.All.SendAsync("GetAllGroups",groups);
+            if (!groups.Contains(groupName))
+            {
+                groups.Add(groupName);
+                return Clients.All.SendAsync("GetAllGroups", groups);
+            }
+            else
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         public Task JoinToGroup(string groupName)
         {
             return Groups.AddToGroupAsync(Context.ConnectionId,groupName);
         }
+        public Task GetAllGroups()
+        {
+           return Clients.Caller.SendAsync("GetAllGroups", groups);
+        }
 
         public Task SendMessageToGroup(SendMessageToGroupModel data)
         {
-            return Clients.Group(data.GroupName).SendAsync("GetGroupMessages", $"{data.GroupName} : {data.Message}" );
+            return Clients.Group(data.GroupName).SendAsync("GetGroupMessages", $" {data.GroupName} ( {data.UserName} ) : {data.Message}" );
         }
 
         public async Task DisconnectFromAllGroups()

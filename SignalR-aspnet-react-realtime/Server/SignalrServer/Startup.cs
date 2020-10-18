@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SignalrServerWebAPI.Hubs;
+using Microsoft.AspNetCore.Cors;
 
 namespace RoundTheCode.ReactSignalR
 {
@@ -40,7 +41,7 @@ namespace RoundTheCode.ReactSignalR
 
             app.UseCors(builder =>
             {
-                builder.WithOrigins("http://localhost:3000")
+                builder.WithOrigins(@"https://reactrealtime.azurewebsites.net", @"http://localhost:3000")
                     .AllowAnyHeader()
                     .WithMethods("GET", "POST")
                     .AllowCredentials();
